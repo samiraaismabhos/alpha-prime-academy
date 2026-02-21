@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alpha Prime Academy</title>
+
+  <meta name="description" content="Alpha Prime Academy: Dizayn (Qrafik / İnteryer), Python, IELTS & English, Petroleum Engineering English, MS Office. Qeydiyyat Google Sheet-ə düşür." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Background glow blobs -->
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob blob--a"></span>
+    <span class="blob blob--b"></span>
+    <span class="blob blob--c"></span>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <div class="brand">
+        <div class="brand__logo">
+          <!-- Logo: logo.png faylını index.html ilə eyni qovluğa qoy -->
+          <img src="./logo.png" alt="Alpha Prime Academy Logo"
+               onerror="this.style.display='none'; this.parentElement.classList.add('brand__logo--fallback'); this.parentElement.textContent='AP';">
+        </div>
+        <div class="brand__meta">
+          <div class="brand__name">Alpha Prime Academy</div>
+          <div class="brand__tag muted" id="brandTag">Premium Training</div>
+        </div>
+      </div>
+
+      <div class="nav__right">
+        <button class="control-btn" id="langToggle" type="button" aria-label="Change language">
+          <i class="fa-solid fa-globe"></i>
+          <span id="langText">AZ</span>
+        </button>
+
+        <button class="control-btn" id="themeToggle" type="button" aria-label="Toggle theme">
+          <span id="themeIcon">🌙</span>
+          <span class="control-btn__txt" id="themeText">Dark</span>
+        </button>
+
+        <a class="btn btn--small btn--outline btn--glow-soft" href="#courses" id="navCourses">
+          <span id="navCoursesText">Kurslar</span>
+        </a>
+
+        <a class="btn btn--small btn--outline btn--glow-soft" href="#register" id="navReg">
+          <i class="fa-solid fa-pen-to-square"></i>
+          <span id="navRegText">Saytda qeydiyyat</span>
+        </a>
+
+        <a class="btn btn--small btn--wa btn--glow-soft" href="https://wa.me/994773222496" target="_blank" rel="noopener" id="navWa">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span id="navWaText">WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero__inner">
+      <div class="hero__left">
+        <h1 id="heroTitle">Premium təlim. Real nəticə. Güclü mentorluq.</h1>
+
+        <p class="hero__desc" id="heroDesc">
+          <strong>Dizayn: Qrafik / İnteryer</strong> (AI workflow), <strong>Python</strong>,
+          <strong>IELTS & English</strong>, <strong>Petroleum Engineering English</strong>, <strong>MS Office</strong>.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--glow" href="#register" id="heroBtnReg">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <span id="heroBtnRegText">Qeydiyyatdan keç</span>
+          </a>
+
+          <a class="btn btn--outline btn--glow-soft" href="#courses" id="heroBtnCourses">
+            <span id="heroBtnCoursesText">Kurs istiqamətlərinə bax</span>
+          </a>
+
+          <a class="btn btn--wa btn--ghost btn--glow-soft" href="https://wa.me/994773222496" target="_blank" rel="noopener" id="heroBtnWa">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span id="heroBtnWaText">WhatsApp ilə yaz</span>
+          </a>
+        </div>
+
+        <div class="hero__badges">
+          <div class="badge reveal"><strong id="b1t">Portfolio</strong><span id="b1s">real layihələrlə</span></div>
+          <div class="badge reveal"><strong id="b2t">Praktika</strong><span id="b2s">tapşırıq + feedback</span></div>
+          <div class="badge reveal"><strong id="b3t">Mentorluq</strong><span id="b3s">planlı inkişaf</span></div>
+        </div>
+      </div>
+
+      <div class="hero__right reveal">
+        <div class="hero-card">
+          <div class="hero-card__top">
+            <div class="hero-card__icon"><i class="fa-solid fa-bolt"></i></div>
+            <div>
+              <h3 id="heroCardTitle">Yeni qruplar açıqdır</h3>
+              <p class="muted" id="heroCardSub">Səviyyənə uyğun yol xəritəsini birlikdə qururuq.</p>
+            </div>
+          </div>
+
+          <div class="hero-card__mini">
+            <span class="mini" id="mini1">Design (Graphic/Interior)</span>
+            <span class="mini" id="mini2">Python</span>
+            <span class="mini" id="mini3">IELTS</span>
+            <span class="mini" id="mini4">Petroleum Engineering English</span>
+            <span class="mini" id="mini5">MS Office</span>
+          </div>
+
+          <div class="hero-card__cta">
+            <a class="btn btn--small btn--glow" href="#register" id="heroCardReg">
+              <i class="fa-solid fa-pen-to-square"></i>
+              <span id="heroCardRegText">Qeydiyyat</span>
+            </a>
+            <a class="btn btn--small btn--wa btn--ghost btn--glow-soft" href="https://wa.me/994773222496" target="_blank" rel="noopener" id="heroCardWa">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span id="heroCardWaText">WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- WHY -->
+  <section class="section why">
+    <div class="container">
+      <div class="section__head center reveal">
+        <h2 id="whyTitle">Niyə Alpha Prime Academy?</h2>
+        <p class="muted" id="whySub">Real nəticə istəyənlər üçün sistemli, praktik və müasir tədris modeli.</p>
+      </div>
+
+      <div class="why__grid">
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 id="w1t">Nəticə Fokuslu Sistem</h3>
+          <p class="why-strong" id="w1s">Planlı inkişaf. Ölçülə bilən nəticə.</p>
+          <p id="w1d">Hər səviyyə konkret bacarıq qazandırır və nəticə real tətbiqlə ölçülür.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fa-solid fa-diagram-project"></i></div>
+          <h3 id="w2t">Praktik və Layihə Əsaslı Tədris</h3>
+          <p class="why-strong" id="w2s">Sadəcə nəzəriyyə deyil — real tətbiq.</p>
+          <p id="w2d">Tapşırıqlar və mini layihələrlə real iş ssenarilərini tətbiq edirsən.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fa-solid fa-robot"></i></div>
+          <h3 id="w3t">Müasir Yanaşma və AI Workflow</h3>
+          <p class="why-strong" id="w3s">Sürətli düşüncə. Effektiv icra.</p>
+          <p id="w3d">Dizaynda AI workflow, Python-da isə strukturlaşdırılmış inkişaf modeli tətbiq edilir.</p>
+        </div>
+
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fa-solid fa-user-graduate"></i></div>
+          <h3 id="w4t">Mentorluq və Fərdi İstiqamətləndirmə</h3>
+          <p class="why-strong" id="w4s">Yol xəritəsi ilə inkişaf.</p>
+          <p id="w4d">Fərdi yanaşma, davamlı feedback və istiqamətləndirmə ilə irəliləyirsən.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES (click -> modal) -->
+  <section class="section" id="courses">
+    <div class="container">
+      <div class="section__head reveal">
+        <h2 id="coursesTitle">Kurs istiqamətləri</h2>
+        <p class="muted" id="coursesSub">Kartların üzərinə kliklə — detalları gör.</p>
+      </div>
+
+      <div class="course-grid">
+        <button class="course-card course-btn reveal" type="button" data-course="design">
+          <div class="course-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+          <h3 id="c1t">Dizayn: Qrafik / İnteryer</h3>
+          <p id="c1d">AI workflow ilə müasir tədris, portfolio yönümlü praktika.</p>
+          <span class="hint" id="hint1">Detallara bax →</span>
+        </button>
+
+        <button class="course-card course-btn reveal" type="button" data-course="python">
+          <div class="course-icon"><i class="fa-solid fa-code"></i></div>
+          <h3 id="c2t">Python</h3>
+          <p id="c2d">Beginner → Advanced: sistemli baza, task-lar və mini layihələr.</p>
+          <span class="hint" id="hint2">Detallara bax →</span>
+        </button>
+
+        <button class="course-card course-btn reveal" type="button" data-course="ielts">
+          <div class="course-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3 id="c3t">IELTS & English</h3>
+          <p id="c3d">Strategiya, mock test, Writing/Speaking feedback — hədəf banda doğru.</p>
+          <span class="hint" id="hint3">Detallara bax →</span>
+        </button>
+
+        <button class="course-card course-btn reveal" type="button" data-course="petroleum">
+          <div class="course-icon"><i class="fa-solid fa-oil-well"></i></div>
+          <h3 id="c4t">Petroleum Engineering English</h3>
+          <p id="c4d">Professional Field English: terminologiya, report writing, workplace communication.</p>
+          <span class="hint" id="hint4">Detallara bax →</span>
+        </button>
+
+        <button class="course-card course-btn reveal" type="button" data-course="msoffice">
+          <div class="course-icon"><i class="fa-solid fa-file-excel"></i></div>
+          <h3 id="c5t">MS Office</h3>
+          <p id="c5d">Excel analiz, Word professional sənəd, PowerPoint təqdimat.</p>
+          <span class="hint" id="hint5">Detallara bax →</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTER -->
+  <section class="section section--panel" id="register">
+    <div class="container">
+      <div class="section__head reveal">
+        <h2 id="regTitle">Qeydiyyat</h2>
+        <p class="muted" id="regSub">Formu doldur — məlumatlar avtomatik Google Sheet-ə düşəcək.</p>
+      </div>
+
+      <form class="form reveal" id="regForm">
+        <div class="form__grid">
+          <div class="field">
+            <label id="lblName">Ad Soyad</label>
+            <input id="fullname" placeholder="Məs: Samira İsmayılova" required>
+          </div>
+
+          <div class="field">
+            <label id="lblPhone">Telefon</label>
+            <input id="phone" placeholder="+994 50 123 45 67" required>
+          </div>
+
+          <div class="field">
+            <label id="lblCourse">Kurs</label>
+            <select id="courseSelect" required>
+              <option value="" disabled selected id="optSelect">Kurs seç</option>
+              <option id="optDesign">Dizayn: Qrafik / İnteryer</option>
+              <option id="optPython">Python</option>
+              <option id="optIelts">IELTS & English</option>
+              <option id="optPetroleum">Petroleum Engineering English</option>
+              <option id="optOffice">MS Office</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label id="lblLevel">Səviyyə</label>
+            <select id="level" required>
+              <option id="lvl1">Beginner</option>
+              <option id="lvl2">Intermediate</option>
+              <option id="lvl3">Advanced</option>
+            </select>
+          </div>
+
+          <div class="field field--full">
+            <label id="lblNote">Qeyd (istəyə bağlı)</label>
+            <textarea id="note" rows="3" placeholder="Məqsədin, istədiyin vaxt, əlavə qeyd..."></textarea>
+          </div>
+        </div>
+
+        <div class="form__actions">
+          <button class="btn btn--glow" type="submit" id="submitBtn">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span id="submitText">Müraciəti göndər</span>
+          </button>
+
+          <a class="btn btn--wa btn--ghost btn--glow-soft" href="https://wa.me/994773222496" target="_blank" rel="noopener" id="regWa">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span id="regWaText">WhatsApp ilə yaz</span>
+          </a>
+        </div>
+
+        <p class="form__note" id="formNote"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> Alpha Prime Academy</span>
+      <span class="muted" id="footerLine">Dizayn • Python • IELTS • Petroleum Engineering English</span>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating -->
+  <a class="whatsapp-float" href="https://wa.me/994773222496" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- MODAL -->
+  <div class="modal" id="courseModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close="true"></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" type="button" data-close="true">✕</button>
+
+      <div class="modal__head">
+        <div class="modal__icon" id="modalIcon"><i class="fa-solid fa-circle-info"></i></div>
+        <div>
+          <h3 id="modalTitle">Kurs</h3>
+          <p id="modalSub" class="muted">Detallar</p>
+        </div>
+      </div>
+
+      <div class="modal__body" id="modalBody"></div>
+
+      <div class="modal__footer">
+        <a href="#register" class="btn btn--small btn--glow-soft" id="modalRegBtn">
+          <i class="fa-solid fa-pen-to-square"></i>
+          <span id="modalRegText">Saytda qeydiyyat</span>
+        </a>
+        <a class="btn btn--small btn--wa btn--ghost btn--glow-soft" target="_blank" rel="noopener" href="https://wa.me/994773222496" id="modalWaBtn">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span id="modalWaText">WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // ===================== CONFIG =====================
+  const GOOGLE_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxu3UAtfYuJkTp5mVWZMDxWtQjGi1x0tm4JyR7cb_NB3wgBnSTgp3FHZ5HD1OAOwL02kw/exec";
+
+  // ===================== YEAR =====================
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // ===================== THEME =====================
+  const themeToggle = document.getElementById("themeToggle");
+  const themeIcon = document.getElementById("themeIcon");
+  const themeText = document.getElementById("themeText");
+
+  function applyTheme(theme){
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+    themeIcon.textContent = theme === "light" ? "☀️" : "🌙";
+    themeText.textContent = theme === "light" ? "Light" : "Dark";
+  }
+  applyTheme(localStorage.getItem("theme") || "dark");
+  themeToggle.addEventListener("click", ()=>{
+    const current = document.documentElement.getAttribute("data-theme") || "dark";
+    applyTheme(current === "dark" ? "light" : "dark");
+  });
+
+  // ===================== i18n =====================
+  const langToggle = document.getElementById("langToggle");
+  const langText = document.getElementById("langText");
+
+  const i18n = {
+    az: {
+      brandTag:"Premium Training",
+      navCoursesText:"Kurslar",
+      navRegText:"Saytda qeydiyyat",
+      navWaText:"WhatsApp",
+
+      heroTitle:"Premium təlim. Real nəticə. Güclü mentorluq.",
+      heroDesc:"Dizayn: Qrafik / İnteryer (AI workflow), Python, IELTS & English, Petroleum Engineering English, MS Office.",
+      heroBtnRegText:"Qeydiyyatdan keç",
+      heroBtnCoursesText:"Kurs istiqamətlərinə bax",
+      heroBtnWaText:"WhatsApp ilə yaz",
+
+      b1t:"Portfolio", b1s:"real layihələrlə",
+      b2t:"Praktika", b2s:"tapşırıq + feedback",
+      b3t:"Mentorluq", b3s:"planlı inkişaf",
+
+      heroCardTitle:"Yeni qruplar açıqdır",
+      heroCardSub:"Səviyyənə uyğun yol xəritəsini birlikdə qururuq.",
+      heroCardRegText:"Qeydiyyat",
+      heroCardWaText:"WhatsApp",
+
+      whyTitle:"Niyə Alpha Prime Academy?",
+      whySub:"Real nəticə istəyənlər üçün sistemli, praktik və müasir tədris modeli.",
+      w1t:"Nəticə Fokuslu Sistem", w1s:"Planlı inkişaf. Ölçülə bilən nəticə.", w1d:"Hər səviyyə konkret bacarıq qazandırır və nəticə real tətbiqlə ölçülür.",
+      w2t:"Praktik və Layihə Əsaslı Tədris", w2s:"Sadəcə nəzəriyyə deyil — real tətbiq.", w2d:"Tapşırıqlar və mini layihələrlə real iş ssenarilərini tətbiq edirsən.",
+      w3t:"Müasir Yanaşma və AI Workflow", w3s:"Sürətli düşüncə. Effektiv icra.", w3d:"Dizaynda AI workflow, Python-da isə strukturlaşdırılmış inkişaf modeli tətbiq edilir.",
+      w4t:"Mentorluq və Fərdi İstiqamətləndirmə", w4s:"Yol xəritəsi ilə inkişaf.", w4d:"Fərdi yanaşma, davamlı feedback və istiqamətləndirmə ilə irəliləyirsən.",
+
+      coursesTitle:"Kurs istiqamətləri",
+      coursesSub:"Kartların üzərinə kliklə — detalları gör.",
+      hint:"Detallara bax →",
+
+      c1t:"Dizayn: Qrafik / İnteryer", c1d:"AI workflow ilə müasir tədris, portfolio yönümlü praktika.",
+      c2t:"Python", c2d:"Beginner → Advanced: sistemli baza, task-lar və mini layihələr.",
+      c3t:"IELTS & English", c3d:"Strategiya, mock test, Writing/Speaking feedback — hədəf banda doğru.",
+      c4t:"Petroleum Engineering English", c4d:"Professional Field English: terminologiya, report writing, workplace communication.",
+      c5t:"MS Office", c5d:"Excel analiz, Word professional sənəd, PowerPoint təqdimat.",
+
+      regTitle:"Qeydiyyat",
+      regSub:"Formu doldur — məlumatlar avtomatik Google Sheet-ə düşəcək.",
+      lblName:"Ad Soyad",
+      lblPhone:"Telefon",
+      lblCourse:"Kurs",
+      optSelect:"Kurs seç",
+      optDesign:"Dizayn: Qrafik / İnteryer",
+      optPython:"Python",
+      optIelts:"IELTS & English",
+      optPetroleum:"Petroleum Engineering English",
+      optOffice:"MS Office",
+      lblLevel:"Səviyyə",
+      lvl1:"Beginner",
+      lvl2:"Intermediate",
+      lvl3:"Advanced",
+      lblNote:"Qeyd (istəyə bağlı)",
+      notePh:"Məqsədin, istədiyin vaxt, əlavə qeyd...",
+      submitText:"Müraciəti göndər",
+      regWaText:"WhatsApp ilə yaz",
+
+      footerLine:"Dizayn • Python • IELTS • Petroleum Engineering English",
+
+      modalRegText:"Saytda qeydiyyat",
+      modalWaText:"WhatsApp",
+
+      sending:"Göndərilir...",
+      sentOk:"Müraciət qəbul olundu ✅ Komandamız tezliklə sizinlə əlaqə saxlayacaq.",
+      sentErr:"Xəta oldu ❌ Zəhmət olmasa yenidən cəhd edin və ya WhatsApp-dan yazın."
+    },
+
+    en: {
+      brandTag:"Premium Training",
+      navCoursesText:"Courses",
+      navRegText:"Website registration",
+      navWaText:"WhatsApp",
+
+      heroTitle:"Premium training. Real results. Strong mentorship.",
+      heroDesc:"Design: Graphic / Interior (AI workflow), Python, IELTS & English, Petroleum Engineering English, MS Office.",
+      heroBtnRegText:"Register now",
+      heroBtnCoursesText:"Explore courses",
+      heroBtnWaText:"Message on WhatsApp",
+
+      b1t:"Portfolio", b1s:"with real projects",
+      b2t:"Practice", b2s:"tasks + feedback",
+      b3t:"Mentorship", b3s:"structured growth",
+
+      heroCardTitle:"New groups are open",
+      heroCardSub:"We build your roadmap based on your level.",
+      heroCardRegText:"Register",
+      heroCardWaText:"WhatsApp",
+
+      whyTitle:"Why Alpha Prime Academy?",
+      whySub:"A structured, practical and modern training model built for real outcomes.",
+      w1t:"Results-Focused System", w1s:"Planned growth. Measurable outcomes.", w1d:"Each level delivers clear skills and progress is measured through real practice.",
+      w2t:"Practical, Project-Based Learning", w2s:"Not just theory — real application.", w2d:"Tasks and mini-projects help you apply skills to real-world scenarios.",
+      w3t:"Modern Approach & AI Workflow", w3s:"Faster thinking. Better execution.", w3d:"AI-enabled workflows in design and a structured learning path in Python.",
+      w4t:"Mentorship & Personal Guidance", w4s:"Grow with a roadmap.", w4d:"Personal guidance, continuous feedback, and structured improvement.",
+
+      coursesTitle:"Course directions",
+      coursesSub:"Click on a card to see details.",
+      hint:"View details →",
+
+      c1t:"Design: Graphic / Interior", c1d:"Modern training with AI workflow and portfolio-driven practice.",
+      c2t:"Python", c2d:"Beginner → Advanced: structured foundations, tasks and mini projects.",
+      c3t:"IELTS & English", c3d:"Strategy, mock tests, Writing/Speaking feedback — toward your target band.",
+      c4t:"Petroleum Engineering English", c4d:"Professional Field English: terminology, report writing, workplace communication.",
+      c5t:"MS Office", c5d:"Excel analysis, Word professional documents, PowerPoint presentations.",
+
+      regTitle:"Registration",
+      regSub:"Fill the form — data will be saved to Google Sheets automatically.",
+      lblName:"Full name",
+      lblPhone:"Phone",
+      lblCourse:"Course",
+      optSelect:"Select a course",
+      optDesign:"Design: Graphic / Interior",
+      optPython:"Python",
+      optIelts:"IELTS & English",
+      optPetroleum:"Petroleum Engineering English",
+      optOffice:"MS Office",
+      lblLevel:"Level",
+      lvl1:"Beginner",
+      lvl2:"Intermediate",
+      lvl3:"Advanced",
+      lblNote:"Note (optional)",
+      notePh:"Your goal, preferred schedule, additional notes...",
+      submitText:"Send request",
+      regWaText:"Chat on WhatsApp",
+
+      footerLine:"Design • Python • IELTS • Petroleum Engineering English",
+
+      modalRegText:"Website registration",
+      modalWaText:"WhatsApp",
+
+      sending:"Sending...",
+      sentOk:"Request received ✅ Our team will contact you soon.",
+      sentErr:"Error ❌ Please try again or contact us via WhatsApp."
+    }
+  };
+
+  // ===================== Modal course content (AZ/EN) =====================
+  const modalContent = {
+    design: {
+      az: {
+        icon:'<i class="fa-solid fa-compass-drafting"></i>',
+        title:"Dizayn: Qrafik / İnteryer",
+        sub:"AI workflow • müasir yanaşma • portfolio nəticəsi",
+        html: `
+          <div class="infoGrid">
+            <div class="info"><strong>İstiqamətlər</strong><span>Qrafik dizayn / İnteryer dizayn</span></div>
+            <div class="info"><strong>AI workflow</strong><span>Müasir dizayn prosesində sürət və keyfiyyət</span></div>
+            <div class="info"><strong>Metod</strong><span>Praktika + feedback + iterasiya</span></div>
+            <div class="info"><strong>Nəticə</strong><span>Portfolio və real layihələr</span></div>
+          </div>
+          <h4 class="modalH">Kimlər üçündür?</h4>
+          <ul class="list">
+            <li>0-dan başlayıb professional səviyyəyə çıxmaq istəyənlər</li>
+            <li>Portfolio hazırlayıb iş/staj üçün təqdim etmək istəyənlər</li>
+            <li>Daha sürətli workflow və keyfiyyətli nəticə istəyənlər</li>
+          </ul>
+          <h4 class="modalH">Nələr öyrənəcəksən?</h4>
+          <ul class="list">
+            <li>Kompozisiya, vizual sistem, konsept düşüncəsi</li>
+            <li>İnteryer layout və professional təqdimat standartları</li>
+            <li>AI ilə ideya/variantlar və sürətli iterasiya</li>
+          </ul>`
+      },
+      en: {
+        icon:'<i class="fa-solid fa-compass-drafting"></i>',
+        title:"Design: Graphic / Interior",
+        sub:"AI workflow • modern approach • portfolio outcome",
+        html: `
+          <div class="infoGrid">
+            <div class="info"><strong>Directions</strong><span>Graphic design / Interior design</span></div>
+            <div class="info"><strong>AI workflow</strong><span>Speed and quality in modern design process</span></div>
+            <div class="info"><strong>Method</strong><span>Practice + feedback + iteration</span></div>
+            <div class="info"><strong>Outcome</strong><span>Portfolio and real projects</span></div>
+          </div>
+          <h4 class="modalH">Who is it for?</h4>
+          <ul class="list">
+            <li>Beginners who want to become job-ready</li>
+            <li>Students aiming to build a strong portfolio</li>
+            <li>Anyone who wants faster workflow and better output quality</li>
+          </ul>
+          <h4 class="modalH">What will you learn?</h4>
+          <ul class="list">
+            <li>Composition, visual systems, concept thinking</li>
+            <li>Interior layout logic and presentation standards</li>
+            <li>AI-assisted ideation and fast iteration</li>
+          </ul>`
+      }
+    },
+
+    python: {
+      az: {
+        icon:'<i class="fa-solid fa-code"></i>',
+        title:"Python",
+        sub:"Beginner → Advanced • real task-lar • layihə yanaşması",
+        html: `
+          <div class="infoGrid">
+            <div class="info"><strong>Səviyyələr</strong><span>Beginner • Intermediate • Advanced</span></div>
+            <div class="info"><strong>Metod</strong><span>Tapşırıq + layihə + kod baxışı</span></div>
+            <div class="info"><strong>Fokus</strong><span>Problem-solving və praktika</span></div>
+            <div class="info"><strong>Nəticə</strong><span>Sistemli baza və real bacarıq</span></div>
+          </div>
+          <h4 class="modalH">Kimlər üçündür?</h4>
+          <ul class="list">
+            <li>0-dan başlayıb Python ilə baza qurmaq istəyənlər</li>
+            <li>Task-larla səviyyəsini artırmaq istəyənlər</li>
+            <li>Mini layihələrlə bacarıqlarını möhkəmləndirənlər</li>
+          </ul>
+          <h4 class="modalH">Nələr öyrənəcəksən?</h4>
+          <ul class="list">
+            <li>Python əsasları: şərtlər, dövrlər, funksiyalar</li>
+            <li>OOP, fayllarla iş, modul strukturu</li>
+            <li>Real ssenarilər üzrə tapşırıqlar</li>
+          </ul>`
+      },
+      en: {
+        icon:'<i class="fa-solid fa-code"></i>',
+        title:"Python",
+        sub:"Beginner → Advanced • real tasks • project-based",
+        html: `
+          <div class="infoGrid">
+            <div class="info"><strong>Levels</strong><span>Beginner • Intermediate • Advanced</span></div>
+            <div class="info"><strong>Method</strong><span>Tasks + projects + code review</span></div>
+            <div class="info"><strong>Focus</strong><span>Problem-solving and practice</span></div>
+            <div class="info"><strong>Outcome</strong><span>Solid foundation and real skills</span></div>
+          </div>
+          <h4 class="modalH">Who is it for?</h4>
+          <ul class="list">
+            <li>Beginners who want a structured Python foundation</li>
+            <li>Students improving through tasks</li>
+            <li>Anyone building skills with mini projects</li>
+          </ul>
+          <h4 class="modalH">What will you learn?</h4>
+          <ul class="list">
+            <li>Core Python: conditions, loops, functions</li>
+            <li>OOP, files, modules</li>
+            <li>Real scenarios and exercises</li>
+          </ul>`
+      }
+    },
+
+    ielts: {
+      az: {
+        icon:'<i class="fa-solid fa-graduation-cap"></i>',
+        title:"IELTS & English",
+        sub:"Band strategiyası • mock test • nəticə planı",
+        html: `
+          <div class="infoGrid">
+            <div class="info"><strong>Fokus</strong><span>Speaking • Writing • Reading • Listening</span></div>
+            <div class="info"><strong>Strategiya</strong><span>Hədəf banda uyğun plan</span></div>
+            <div class="info"><strong>Mock test</strong><span>Analiz + düzəliş</span></div>
+            <div class="info"><strong>Nəticə</strong><span>Stabil yüksəliş</span></div>
+          </div>
+          <h4 class="modalH">Kimlər üçündür?</h4>
+          <ul class="list">
+            <li>IELTS-dən yüksək band hədəfləyənlər</li>
+            <li>Writing/Speaking feedback istəyənlər</li>
+            <li>Planlı hazırlıqla nəticə almaq istəyənlər</li>
+          </ul>
+          <h4 class="modalH">Nələr öyrənəcəksən?</h4>
+          <ul class="list">
+            <li>Writing Task 1/2 struktur və kriteriyalar</li>
+            <li>Speaking üçün strategiya və düzəlişlər</li>
+            <li>Reading/Listening time management</li>
+          </ul>`
+      },
+      en: {
+        icon:'<i class="fa-solid fa-graduation-cap"></i>',
+        title:"IELTS & English",
+        sub:"Band strategy • mock tests • results plan",
+        html: `
+          <div class="infoGrid">
+            <div class="info"><strong>Focus</strong><span>Speaking • Writing • Reading • Listening</span></div>
+            <div class="info"><strong>Strategy</strong><span>Plan for your target band</span></div>
+            <div class="info"><strong>Mock tests</strong><span>Analysis + improvements</span></div>
+            <div class="info"><strong>Outcome</strong><span>Stable progress</span></div>
+          </div>
+          <h4 class="modalH">Who is it for?</h4>
+          <ul class="list">
+            <li>Students targeting a higher IELTS band</li>
+            <li>Those who need Writing/Speaking feedback</li>
+            <li>Anyone who wants a structured plan</li>
+          </ul>
+          <h4 class="modalH">What will you learn?</h4>
+          <ul class="list">
+            <li>Writing Task 1/2 structure and scoring</li>
+            <li>Speaking strategies and corrections</li>
+            <li>Reading/Listening time management</li>
+          </ul>`
+      }
+    },
+
+    petroleum: {
+      az: {
+        icon:'<i class="fa-solid fa-oil-well"></i>',
+        title:"Petroleum Engineering English",
+        sub:"Professional Field English: terminologiya • report • ünsiyyət",
+        html: `
+          <div class="infoGrid">
+            <div class="info"><strong>Fokus</strong><span>Sahə ingilis dili (Field English)</span></div>
+            <div class="info"><strong>Terminologiya</strong><span>Oil & gas vocabulary + praktik istifadə</span></div>
+            <div class="info"><strong>Writing</strong><span>Email, report, summary</span></div>
+            <div class="info"><strong>Speaking</strong><span>Meeting, call, sahə ünsiyyəti</span></div>
+          </div>
+          <h4 class="modalH">Kimlər üçündür?</h4>
+          <ul class="list">
+            <li>Petroleum Engineer-lər və oil & gas sahəsi</li>
+            <li>Professional report & yazışma istəyənlər</li>
+            <li>Meeting/call ünsiyyətini gücləndirənlər</li>
+          </ul>
+          <h4 class="modalH">Nələr öyrənəcəksən?</h4>
+          <ul class="list">
+            <li>Texniki mətn oxuma və izah</li>
+            <li>Role-play: meeting, daily report discussion</li>
+            <li>Professional yazışma standartları</li>
+          </ul>`
+      },
+      en: {
+        icon:'<i class="fa-solid fa-oil-well"></i>',
+        title:"Petroleum Engineering English",
+        sub:"Professional Field English: terminology • reporting • communication",
+        html: `
+          <div class="infoGrid">
+            <div class="info"><strong>Focus</strong><span>Field English for Petroleum Engineering</span></div>
+            <div class="info"><strong>Terminology</strong><span>Oil & gas vocabulary + real usage</span></div>
+            <div class="info"><strong>Writing</strong><span>Email, reports, summaries</span></div>
+            <div class="info"><strong>Speaking</strong><span>Meetings, calls, field communication</span></div>
+          </div>
+          <h4 class="modalH">Who is it for?</h4>
+          <ul class="list">
+            <li>Petroleum engineers and oil & gas professionals</li>
+            <li>Those who want professional reporting and emails</li>
+            <li>Anyone needing confident meetings/calls</li>
+          </ul>
+          <h4 class="modalH">What will you learn?</h4>
+          <ul class="list">
+            <li>Technical reading and explanations</li>
+            <li>Role-plays: meetings, daily reports</li>
+            <li>Professional writing standards</li>
+          </ul>`
+      }
+    },
+
+    msoffice: {
+      az: {
+        icon:'<i class="fa-solid fa-file-excel"></i>',
+        title:"MS Office",
+        sub:"Word • Excel • PowerPoint — praktik iş bacarıqları",
+        html: `
+          <div class="infoGrid">
+            <div class="info"><strong>Word</strong><span>Professional sənəd, rəsmi yazışma, CV</span></div>
+            <div class="info"><strong>Excel</strong><span>Funksiyalar, analiz, hesabat</span></div>
+            <div class="info"><strong>PowerPoint</strong><span>Struktur və premium təqdimat</span></div>
+            <div class="info"><strong>Nəticə</strong><span>İş üçün tətbiq olunan bacarıqlar</span></div>
+          </div>
+          <h4 class="modalH">Kimlər üçündür?</h4>
+          <ul class="list">
+            <li>Ofis bacarıqlarını professional səviyyəyə qaldırmaq istəyənlər</li>
+            <li>Excel-də analiz və hesabat hazırlamaq istəyənlər</li>
+            <li>PowerPoint-i premium səviyyəyə qaldırmaq istəyənlər</li>
+            <li>Word ilə rəsmi sənəd, məktub və CV hazırlamaq istəyənlər</li>
+          </ul>
+          <h4 class="modalH">Nələr öyrənəcəksən?</h4>
+          <ul class="list">
+            <li>Excel funksiyaları və real iş ssenariləri</li>
+            <li>Data analizi və hesabat hazırlama prinsipləri</li>
+            <li>Word-də professional formatlama və CV strukturu</li>
+            <li>PowerPoint-də vizual balanslı təqdimat</li>
+          </ul>`
+      },
+      en: {
+        icon:'<i class="fa-solid fa-file-excel"></i>',
+        title:"MS Office",
+        sub:"Word • Excel • PowerPoint — practical workplace skills",
+        html: `
+          <div class="infoGrid">
+            <div class="info"><strong>Word</strong><span>Documents, official writing, CV</span></div>
+            <div class="info"><strong>Excel</strong><span>Functions, analysis, reporting</span></div>
+            <div class="info"><strong>PowerPoint</strong><span>Structure and premium presentations</span></div>
+            <div class="info"><strong>Outcome</strong><span>Work-ready practical skills</span></div>
+          </div>
+          <h4 class="modalH">Who is it for?</h4>
+          <ul class="list">
+            <li>Anyone who wants professional office skills</li>
+            <li>Those who need Excel analysis and reporting</li>
+            <li>People who want premium PowerPoint presentations</li>
+            <li>Students learning Word for CVs and formal documents</li>
+          </ul>
+          <h4 class="modalH">What will you learn?</h4>
+          <ul class="list">
+            <li>Top Excel functions and workplace scenarios</li>
+            <li>Data analysis principles and reporting</li>
+            <li>Professional Word formatting and CV structure</li>
+            <li>Premium presentation building in PowerPoint</li>
+          </ul>`
+      }
+    }
+  };
+
+  // ===================== Apply language =====================
+  function applyLang(lang){
+    localStorage.setItem("lang", lang);
+    document.documentElement.lang = lang;
+    langText.textContent = lang.toUpperCase();
+    const t = i18n[lang];
+
+    document.getElementById("brandTag").textContent = t.brandTag;
+    document.getElementById("navCoursesText").textContent = t.navCoursesText;
+    document.getElementById("navRegText").textContent = t.navRegText;
+    document.getElementById("navWaText").textContent = t.navWaText;
+
+    document.getElementById("heroTitle").textContent = t.heroTitle;
+    document.getElementById("heroDesc").textContent = t.heroDesc;
+    document.getElementById("heroBtnRegText").textContent = t.heroBtnRegText;
+    document.getElementById("heroBtnCoursesText").textContent = t.heroBtnCoursesText;
+    document.getElementById("heroBtnWaText").textContent = t.heroBtnWaText;
+
+    document.getElementById("b1t").textContent = t.b1t;
+    document.getElementById("b1s").textContent = t.b1s;
+    document.getElementById("b2t").textContent = t.b2t;
+    document.getElementById("b2s").textContent = t.b2s;
+    document.getElementById("b3t").textContent = t.b3t;
+    document.getElementById("b3s").textContent = t.b3s;
+
+    document.getElementById("heroCardTitle").textContent = t.heroCardTitle;
+    document.getElementById("heroCardSub").textContent = t.heroCardSub;
+    document.getElementById("heroCardRegText").textContent = t.heroCardRegText;
+    document.getElementById("heroCardWaText").textContent = t.heroCardWaText;
+
+    document.getElementById("whyTitle").textContent = t.whyTitle;
+    document.getElementById("whySub").textContent = t.whySub;
+
+    document.getElementById("w1t").textContent = t.w1t;
+    document.getElementById("w1s").textContent = t.w1s;
+    document.getElementById("w1d").textContent = t.w1d;
+
+    document.getElementById("w2t").textContent = t.w2t;
+    document.getElementById("w2s").textContent = t.w2s;
+    document.getElementById("w2d").textContent = t.w2d;
+
+    document.getElementById("w3t").textContent = t.w3t;
+    document.getElementById("w3s").textContent = t.w3s;
+    document.getElementById("w3d").textContent = t.w3d;
+
+    document.getElementById("w4t").textContent = t.w4t;
+    document.getElementById("w4s").textContent = t.w4s;
+    document.getElementById("w4d").textContent = t.w4d;
+
+    document.getElementById("coursesTitle").textContent = t.coursesTitle;
+    document.getElementById("coursesSub").textContent = t.coursesSub;
+
+    document.getElementById("c1t").textContent = t.c1t;
+    document.getElementById("c1d").textContent = t.c1d;
+    document.getElementById("c2t").textContent = t.c2t;
+    document.getElementById("c2d").textContent = t.c2d;
+    document.getElementById("c3t").textContent = t.c3t;
+    document.getElementById("c3d").textContent = t.c3d;
+    document.getElementById("c4t").textContent = t.c4t;
+    document.getElementById("c4d").textContent = t.c4d;
+    document.getElementById("c5t").textContent = t.c5t;
+    document.getElementById("c5d").textContent = t.c5d;
+
+    ["hint1","hint2","hint3","hint4","hint5"].forEach(id => document.getElementById(id).textContent = t.hint);
+
+    document.getElementById("regTitle").textContent = t.regTitle;
+    document.getElementById("regSub").textContent = t.regSub;
+    document.getElementById("lblName").textContent = t.lblName;
+    document.getElementById("lblPhone").textContent = t.lblPhone;
+    document.getElementById("lblCourse").textContent = t.lblCourse;
+    document.getElementById("optSelect").textContent = t.optSelect;
+    document.getElementById("optDesign").textContent = t.optDesign;
+    document.getElementById("optPython").textContent = t.optPython;
+    document.getElementById("optIelts").textContent = t.optIelts;
+    document.getElementById("optPetroleum").textContent = t.optPetroleum;
+    document.getElementById("optOffice").textContent = t.optOffice;
+    document.getElementById("lblLevel").textContent = t.lblLevel;
+    document.getElementById("lvl1").textContent = t.lvl1;
+    document.getElementById("lvl2").textContent = t.lvl2;
+    document.getElementById("lvl3").textContent = t.lvl3;
+    document.getElementById("lblNote").textContent = t.lblNote;
+    document.getElementById("note").placeholder = t.notePh;
+    document.getElementById("submitText").textContent = t.submitText;
+    document.getElementById("regWaText").textContent = t.regWaText;
+
+    document.getElementById("footerLine").textContent = t.footerLine;
+
+    document.getElementById("modalRegText").textContent = t.modalRegText;
+    document.getElementById("modalWaText").textContent = t.modalWaText;
+  }
+
+  applyLang(localStorage.getItem("lang") || "az");
+
+  langToggle.addEventListener("click", ()=>{
+    const current = localStorage.getItem("lang") || "az";
+    applyLang(current === "az" ? "en" : "az");
+  });
+
+  // ===================== Modal logic =====================
+  const modal = document.getElementById("courseModal");
+  const modalIcon = document.getElementById("modalIcon");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalSub = document.getElementById("modalSub");
+  const modalBody = document.getElementById("modalBody");
+
+  function openModal(courseKey){
+    const lang = localStorage.getItem("lang") || "az";
+    const c = modalContent[courseKey][lang];
+
+    modalIcon.innerHTML = c.icon;
+    modalTitle.textContent = c.title;
+    modalSub.textContent = c.sub;
+    modalBody.innerHTML = c.html;
+
+    // Form select auto-fill
+    const sel = document.getElementById("courseSelect");
+    if(sel){
+      if(courseKey === "design") sel.value = document.getElementById("optDesign").textContent;
+      if(courseKey === "python") sel.value = document.getElementById("optPython").textContent;
+      if(courseKey === "ielts") sel.value = document.getElementById("optIelts").textContent;
+      if(courseKey === "petroleum") sel.value = document.getElementById("optPetroleum").textContent;
+      if(courseKey === "msoffice") sel.value = document.getElementById("optOffice").textContent;
+    }
+
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden","false");
+  }
+
+  function closeModal(){
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden","true");
+  }
+
+  document.querySelectorAll(".course-btn").forEach(btn=>{
+    btn.addEventListener("click", ()=> openModal(btn.dataset.course));
+  });
+
+  modal.addEventListener("click",(e)=>{
+    if(e.target.dataset.close === "true") closeModal();
+  });
+
+  document.addEventListener("keydown",(e)=>{
+    if(e.key === "Escape") closeModal();
+  });
+
+  // ===================== Form -> Google Sheets =====================
+  const regForm = document.getElementById("regForm");
+  regForm.addEventListener("submit", async (e)=>{
+    e.preventDefault();
+    const lang = localStorage.getItem("lang") || "az";
+    const t = i18n[lang];
+
+    const fullname = document.getElementById("fullname").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const course = document.getElementById("courseSelect").value;
+    const level = document.getElementById("level").value;
+    const note = document.getElementById("note").value.trim();
+
+    const url = GOOGLE_WEB_APP_URL
+      + "?fullname=" + encodeURIComponent(fullname)
+      + "&phone=" + encodeURIComponent(phone)
+      + "&course=" + encodeURIComponent(course)
+      + "&level=" + encodeURIComponent(level)
+      + "&note=" + encodeURIComponent(note)
+      + "&language=" + encodeURIComponent(lang);
+
+    const formNote = document.getElementById("formNote");
+    const submitBtn = document.getElementById("submitBtn");
+
+    submitBtn.disabled = true;
+    formNote.textContent = t.sending;
+
+    try{
+      await fetch(url, { method:"GET", mode:"no-cors" });
+      formNote.textContent = t.sentOk;
+      regForm.reset();
+    }catch(err){
+      formNote.textContent = t.sentErr;
+    }finally{
+      submitBtn.disabled = false;
+    }
+  });
+
+  // ===================== Scroll reveal =====================
+  const reveals = document.querySelectorAll(".reveal");
+  function revealOnScroll(){
+    const wh = window.innerHeight;
+    reveals.forEach(el=>{
+      const top = el.getBoundingClientRect().top;
+      if(top < wh - 90) el.classList.add("active");
+    });
+  }
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+</script>
+
+</body>
+</html>
